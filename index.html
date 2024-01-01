@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(49, 38, 49);
+            overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
+        }
+
+        .hny {
+            background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 150px;
+            font-weight: bold;
+            margin: 0;
+            position: relative;
+            animation: crackers 2s infinite;
+        }
+
+        @keyframes crackers {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hny::before {
+            content: "🎆"; /* Unicode character for fireworks */
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            animation: rotateCracker 2s infinite;
+        }
+
+        @keyframes rotateCracker {
+            0% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+            50% {
+                transform: translateX(-50%) rotate(180deg);
+            }
+            100% {
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hny">
+        Happy New Year 2024
+    </div>
+</body>
+</html>
